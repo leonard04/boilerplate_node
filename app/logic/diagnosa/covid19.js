@@ -16,7 +16,7 @@ function sum(obj){
 
 exports.postDiagnoseCov = async(req,res) =>{
     try {
-        let hasil = criteria.covid19.batuk / sum(criteria)
+        let hasil = criteria.covid19.batuk / sum(criteria.covid19)
 
         res.json(response.createResp(200,
             {
