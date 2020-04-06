@@ -1,9 +1,9 @@
 module.exports = {
-    E0000:{
+    unexpected_error:{
         errorCode: "E0000",
         errorDesc: "Unexpected Error"
     },
-    E0001:{
+    id_user_empty:{
         errorCode: "E0001",
         errorDesc: "Id user tidak boleh kosong!"
     }

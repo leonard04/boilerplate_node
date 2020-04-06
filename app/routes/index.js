@@ -11,9 +11,8 @@ router.get('/', function(req, res, next) {
   res.send("Welcome to lapor covid-19");
 });
 
-router.post('/diagnosa', controller_diagnosa)
-
 /* example call controller */
-router.get('/user', controller_user)
+router.use('/user', controller_user)
+router.use('/diagnose', controller_diagnosa)
 
 module.exports = router;

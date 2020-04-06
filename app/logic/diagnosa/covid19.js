@@ -1,5 +1,6 @@
 const error = require('../../helper/errors/index')
-const criteria = require('../../helper/bobot/covid')
+const criteria = require('../../helper/constant/disease')
+const response = require('../../helper/response')
 
 let lang = 'en'
 
@@ -12,13 +13,18 @@ function sum(obj){
     }
     return sum;
 }
-exports.postDiagnoseCov = async(req,res,next) =>{
-    try {
-        let hasil = criteria.batuk / sum(criteria)
 
-        res.json({batuk: hasil})
+exports.postDiagnoseCov = async(req,res) =>{
+    try {
+        let hasil = criteria.covid19.batuk / sum(criteria)
+
+        res.json(response.createResp(200,
+            {
+                batuk: hasil,
+            }
+        ))
         
     } catch {
-        res.json(error[lang].E0000)
+        res.json(error[lang].unexpected_error)
     }
 }
