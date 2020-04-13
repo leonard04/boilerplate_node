@@ -167,7 +167,7 @@ exports.postDiagnoseCov = async(req,res) =>{
                     res.json(response.createResp(200,
                         [{
                             message: "Update Success",
-                            id: result.insertId,
+                            id: _id,
                             nama: _nama,
                             no_telp: _notelp,
                             usia: _usia,
